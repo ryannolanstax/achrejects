@@ -25,6 +25,11 @@ if uploaded_files:
 
     dfpreclean2['Funds Transfer Amount'] = dfpreclean2['Funds Transfer Amount'] / 100.00
 
+    
+    dfpreclean2['Funding Sub Merchant ID'] = dfpreclean2['Funding Sub Merchant ID'].apply(str)
+    dfpreclean2['Funding Sub Merchant ID'] = dfpreclean2['Funding Sub Merchant ID'].apply(lambda x: '0' + x + '0' if len(x) == 8 else x)
+    
+
     ##funding sub merchant ID NEEDS TO BE CLEANED UP
 
 
